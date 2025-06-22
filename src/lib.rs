@@ -1,3 +1,7 @@
+#![no_std]
+
+pub extern crate alloc;
+
 use camera::Camera;
 use embedded_graphics_core::pixelcolor::Rgb565;
 use embedded_graphics_core::pixelcolor::RgbColor;
@@ -12,7 +16,9 @@ pub mod camera;
 pub mod draw;
 pub mod framebuffer;
 pub mod mesh;
-pub mod perfcounter;
+// pub mod perfcounter;
+
+pub const PI: f32 = 3.14159265358979323846264338327950288_f32;
 
 #[derive(Debug)]
 pub enum DrawPrimitive {

@@ -1,3 +1,5 @@
+use alloc::{format, string::String};
+
 #[derive(Debug)]
 pub struct PerformanceCounter {
     start_of_frame: std::time::Instant,

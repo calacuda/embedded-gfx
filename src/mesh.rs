@@ -1,3 +1,4 @@
+use alloc::vec::Vec;
 use embedded_graphics_core::pixelcolor::{Rgb565, WebColors};
 use log::error;
 use nalgebra::{Point3, Similarity3, UnitQuaternion, Vector3};

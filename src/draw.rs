@@ -1,3 +1,4 @@
+use alloc::{fmt::Debug, vec::Vec};
 use embedded_graphics_core::draw_target::DrawTarget;
 use embedded_graphics_core::prelude::Point;
 
@@ -8,7 +9,7 @@ pub fn draw<D: DrawTarget<Color = embedded_graphics_core::pixelcolor::Rgb565>>(
     primitive: DrawPrimitive,
     fb: &mut D,
 ) where
-    <D as DrawTarget>::Error: std::fmt::Debug,
+    <D as DrawTarget>::Error: Debug,
 {
     match primitive {
         DrawPrimitive::Line([p1, p2], color) => {
@@ -60,7 +61,7 @@ fn fill_bottom_flat_triangle<D: DrawTarget<Color = embedded_graphics_core::pixel
     color: embedded_graphics_core::pixelcolor::Rgb565,
     fb: &mut D,
 ) where
-    <D as DrawTarget>::Error: std::fmt::Debug,
+    <D as DrawTarget>::Error: Debug,
 {
     let invslope1 = (p2.x - p1.x) as f32 / (p2.y - p1.y) as f32;
     let invslope2 = (p3.x - p1.x) as f32 / (p3.y - p1.y) as f32;
@@ -88,7 +89,7 @@ fn fill_top_flat_triangle<D: DrawTarget<Color = embedded_graphics_core::pixelcol
     color: embedded_graphics_core::pixelcolor::Rgb565,
     fb: &mut D,
 ) where
-    <D as DrawTarget>::Error: std::fmt::Debug,
+    <D as DrawTarget>::Error: Debug,
 {
     let invslope1 = (p3.x - p1.x) as f32 / (p3.y - p1.y) as f32;
     let invslope2 = (p3.x - p2.x) as f32 / (p3.y - p2.y) as f32;
@@ -115,7 +116,7 @@ fn draw_horizontal_line<D: DrawTarget<Color = embedded_graphics_core::pixelcolor
     color: embedded_graphics_core::pixelcolor::Rgb565,
     fb: &mut D,
 ) where
-    <D as DrawTarget>::Error: std::fmt::Debug,
+    <D as DrawTarget>::Error: Debug,
 {
     let start = p1.x.min(p2.x);
     let end = p1.x.max(p2.x);

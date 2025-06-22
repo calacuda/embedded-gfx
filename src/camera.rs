@@ -1,4 +1,4 @@
-use std::f32::consts;
+// use std::f32::consts;
 
 use nalgebra::{Isometry3, Perspective3, Point3, Vector3};
 
@@ -18,7 +18,7 @@ impl Camera {
     pub fn new(aspect_ratio: f32) -> Camera {
         let mut ret = Camera {
             position: Point3::new(0.0, 0.0, 0.0),
-            fov: consts::PI / 2.0,
+            fov: crate::PI / 2.0,
             view_matrix: nalgebra::Matrix4::identity(),
             projection_matrix: nalgebra::Matrix4::identity(),
             vp_matrix: nalgebra::Matrix4::identity(),
