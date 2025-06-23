@@ -3,7 +3,7 @@ use embedded_graphics_core::pixelcolor::{Rgb565, WebColors};
 use log::error;
 use nalgebra::{Point3, Similarity3, UnitQuaternion, Vector3};
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone, Copy)]
 pub enum RenderMode {
     Points,
     Lines,
